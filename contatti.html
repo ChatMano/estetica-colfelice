@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cura del Viso & Sguardo - Estetica Colfelice</title>
+    <title>Contatti - Estetica Colfelice</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -41,21 +41,26 @@
         .page-hero .breadcrumb { margin-top: 20px; font-size: 14px; color: var(--text); }
         .page-hero .breadcrumb a { color: var(--accent); }
 
-        .treatments-section { padding: 80px 0; background: var(--white); }
-        .treatment-block { margin-bottom: 50px; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
-        .treatment-block:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(138, 198, 208, 0.25); }
-        .treatment-block:last-child { margin-bottom: 0; }
-        .treatment-header { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); padding: 25px 35px; display: flex; align-items: center; gap: 15px; }
-        .treatment-header i { font-size: 28px; color: var(--white); }
-        .treatment-header h2 { font-size: 26px; color: var(--white); margin: 0; }
-        .treatment-body { padding: 35px; }
-        .treatment-body p { font-size: 16px; line-height: 1.8; color: var(--text); }
+        .contact-section { padding: 80px 0; background: var(--white); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
 
-        .cta-section { padding: 80px 0; background: linear-gradient(to bottom, var(--white) 0%, #8AC6D0 100%); text-align: center; }
-        .cta-section h2 { font-size: 36px; margin-bottom: 20px; }
-        .cta-section p { font-size: 18px; margin-bottom: 30px; color: var(--text); }
-        .btn-primary { display: inline-block; background: var(--accent); color: var(--white); padding: 16px 40px; border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; transition: all 0.3s; }
-        .btn-primary:hover { background: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(138, 198, 208, 0.4); }
+        .contact-info { }
+        .contact-info h2 { font-size: 30px; margin-bottom: 30px; color: var(--accent); }
+
+        .info-card { display: flex; align-items: flex-start; gap: 20px; padding: 25px; background: var(--primary-light); border-radius: 15px; margin-bottom: 20px; transition: transform 0.3s; }
+        .info-card:hover { transform: translateX(5px); }
+        .info-card i { font-size: 24px; color: var(--accent); min-width: 30px; margin-top: 3px; }
+        .info-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-dark); }
+        .info-card p { font-size: 15px; color: var(--text); }
+        .info-card a { color: var(--accent); transition: color 0.3s; }
+        .info-card a:hover { color: var(--primary); }
+
+        .form-container { background: var(--white); border-radius: 15px; box-shadow: 0 5px 30px rgba(0,0,0,0.06); padding: 35px; }
+        .form-container h2 { font-size: 26px; margin-bottom: 20px; text-align: center; }
+
+        .map-section { padding: 0 0 80px; background: var(--white); }
+        .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.06); }
+        .map-container iframe { width: 100%; height: 400px; border: none; }
 
         footer { background: #2a2a2a; color: var(--white); padding: 50px 0 30px; }
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; opacity: 0.7; }
@@ -70,8 +75,7 @@
             .menu-toggle span { background: var(--accent); }
             .page-hero { margin-top: 60px; padding: 50px 0 40px; }
             .page-hero h1 { font-size: 32px; }
-            .treatment-header h2 { font-size: 20px; }
-            .treatment-body { padding: 25px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
 </head>
@@ -95,53 +99,82 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Cura del Viso & Sguardo</h1>
-            <p>Trattamenti mirati per un viso luminoso e uno sguardo intenso, dalla pulizia profonda alla laminazione ciglia.</p>
-            <div class="breadcrumb"><a href="./">Home</a> / Cura del Viso & Sguardo</div>
+            <h1>Contatti</h1>
+            <p>Siamo qui per te. Contattaci per informazioni o per prenotare il tuo trattamento.</p>
+            <div class="breadcrumb"><a href="./">Home</a> / Contatti</div>
         </div>
     </section>
 
-    <section class="treatments-section">
+    <section class="contact-section">
         <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Dove Trovarci</h2>
 
-            <div class="treatment-block">
-                <div class="treatment-header">
-                    <i class="fas fa-spa"></i>
-                    <h2>Pulizia del Viso Professionale</h2>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Indirizzo</h3>
+                            <p>Via Colfelice - Roma<br>Zona Colli Albani</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefono</h3>
+                            <p><a href="tel:+39XXXXXXXXXX">+39 XXX XXX XXXX</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@esteticacolfelice.it">info@esteticacolfelice.it</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Orari di Apertura</h3>
+                            <p>Lunedì - Sabato: 9:00 - 19:00<br>Domenica: Chiuso</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="treatment-body">
-                    <p>La nostra pulizia del viso non è un semplice passaggio estetico, ma un protocollo di igiene profonda studiato per far respirare la tua pelle. Liberando i pori da smog e impurità, ossigeniamo i tessuti e restituiamo al volto la sua luce naturale. A differenza dei metodi standard, analizziamo preventivamente la tua tipologia cutanea per adattare il trattamento alla tua sensibilità, evitando arrossamenti e preparando l'epidermide a ricevere con massima efficacia i benefici dei prodotti successivi.</p>
+
+                <div class="form-container">
+                    <h2>Scrivici</h2>
+                    <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/y4rIDvxkOrIos2FXfQFr"
+                        style="width:100%;height:500px;border:none;border-radius:3px"
+                        id="inline-y4rIDvxkOrIos2FXfQFr"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Modulo Informazioni Sito Ufficiale"
+                        data-height="500"
+                        data-layout-iframe-id="inline-y4rIDvxkOrIos2FXfQFr"
+                        data-form-id="y4rIDvxkOrIos2FXfQFr"
+                        title="Modulo Informazioni Sito Ufficiale"
+                    >
+                    </iframe>
+                    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
                 </div>
             </div>
-
-            <div class="treatment-block">
-                <div class="treatment-header">
-                    <i class="fas fa-flask"></i>
-                    <h2>Trattamenti all'Acido (Peeling)</h2>
-                </div>
-                <div class="treatment-body">
-                    <p>Rinnovare la pelle e uniformare l'incarnato è possibile grazie ai nostri peeling mirati, basati sull'utilizzo di acidi sicuri e performanti come il mandelico o il glicolico. Questo trattamento accelera il turnover cellulare, schiarendo le macchie e riducendo le imperfezioni per un immediato effetto "pelle di seta". La nostra esperienza ci consente di selezionare il mix perfetto per le tue esigenze, garantendoti un rinnovamento cutaneo profondo senza mai stressare inutilmente i tessuti.</p>
-                </div>
-            </div>
-
-            <div class="treatment-block">
-                <div class="treatment-header">
-                    <i class="fas fa-eye"></i>
-                    <h2>Laminazione Ciglia</h2>
-                </div>
-                <div class="treatment-body">
-                    <p>Per valorizzare lo sguardo in modo naturale e duraturo, la laminazione è il trattamento curativo d'eccellenza che curva, tinge e nutre le tue ciglia con cheratina e vitamine. Otterrai uno sguardo aperto e intenso per settimane, senza dover ricorrere a ciglia finte o all'uso quotidiano del mascara. Utilizziamo solo prodotti certificati che proteggono le tue ciglia naturali, assicurandoti una curvatura armoniosa ed elegante studiata apposta per la forma del tuo occhio.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="map-section">
         <div class="container">
-            <h2>Prenota il Tuo Trattamento</h2>
-            <p>Contattaci per una consulenza personalizzata gratuita</p>
-            <a href="./#form-section" class="btn-primary">Prenota Ora</a>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.5!2d12.518!3d41.876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVia+Colfelice%2C+Roma!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 

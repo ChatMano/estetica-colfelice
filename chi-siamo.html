@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cura del Viso & Sguardo - Estetica Colfelice</title>
+    <title>Chi Siamo - Estetica Colfelice</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -41,15 +41,23 @@
         .page-hero .breadcrumb { margin-top: 20px; font-size: 14px; color: var(--text); }
         .page-hero .breadcrumb a { color: var(--accent); }
 
-        .treatments-section { padding: 80px 0; background: var(--white); }
-        .treatment-block { margin-bottom: 50px; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
-        .treatment-block:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(138, 198, 208, 0.25); }
-        .treatment-block:last-child { margin-bottom: 0; }
-        .treatment-header { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); padding: 25px 35px; display: flex; align-items: center; gap: 15px; }
-        .treatment-header i { font-size: 28px; color: var(--white); }
-        .treatment-header h2 { font-size: 26px; color: var(--white); margin: 0; }
-        .treatment-body { padding: 35px; }
-        .treatment-body p { font-size: 16px; line-height: 1.8; color: var(--text); }
+        .about-section { padding: 80px 0; background: var(--white); }
+        .about-block { margin-bottom: 50px; }
+        .about-block h2 { font-size: 30px; margin-bottom: 20px; color: var(--accent); }
+        .about-block p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 15px; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .stat-card { text-align: center; padding: 40px 20px; background: var(--primary-light); border-radius: 15px; transition: transform 0.3s; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card .stat-number { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--accent); }
+        .stat-card .stat-label { font-size: 16px; color: var(--text); margin-top: 10px; }
+
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .value-card { padding: 30px; background: var(--white); border-radius: 15px; box-shadow: 0 5px 30px rgba(0,0,0,0.06); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .value-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(138, 198, 208, 0.25); }
+        .value-card i { font-size: 40px; color: var(--accent); margin-bottom: 20px; }
+        .value-card h3 { font-size: 20px; margin-bottom: 10px; }
+        .value-card p { font-size: 15px; line-height: 1.7; }
 
         .cta-section { padding: 80px 0; background: linear-gradient(to bottom, var(--white) 0%, #8AC6D0 100%); text-align: center; }
         .cta-section h2 { font-size: 36px; margin-bottom: 20px; }
@@ -70,8 +78,8 @@
             .menu-toggle span { background: var(--accent); }
             .page-hero { margin-top: 60px; padding: 50px 0 40px; }
             .page-hero h1 { font-size: 32px; }
-            .treatment-header h2 { font-size: 20px; }
-            .treatment-body { padding: 25px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+            .values-grid { grid-template-columns: 1fr; gap: 20px; }
         }
     </style>
 </head>
@@ -95,42 +103,61 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Cura del Viso & Sguardo</h1>
-            <p>Trattamenti mirati per un viso luminoso e uno sguardo intenso, dalla pulizia profonda alla laminazione ciglia.</p>
-            <div class="breadcrumb"><a href="./">Home</a> / Cura del Viso & Sguardo</div>
+            <h1>Chi Siamo</h1>
+            <p>L'eccellenza dell'estetica avanzata, il calore di un momento tutto per te.</p>
+            <div class="breadcrumb"><a href="./">Home</a> / Chi Siamo</div>
         </div>
     </section>
 
-    <section class="treatments-section">
+    <section class="about-section">
         <div class="container">
 
-            <div class="treatment-block">
-                <div class="treatment-header">
-                    <i class="fas fa-spa"></i>
-                    <h2>Pulizia del Viso Professionale</h2>
+            <div class="about-block">
+                <h2>L'essenza di Estetica Colfelice</h2>
+                <p>Benvenuti nel nostro spazio. Il centro nasce da un'idea semplice: unire l'efficacia delle tecnologie più innovative al calore di un momento dedicato interamente a te. Sappiamo che la cura del corpo non è solo estetica, ma un modo per stare bene con se stesse: per questo lavoriamo ogni giorno con passione, gioia e un'attenzione assoluta alla pulizia e alla sicurezza.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>Perché scegliere il nostro centro in via Colfelice?</h2>
+                <p>Qui nel cuore della zona Colli Albani a Roma non troverai trattamenti standard. Crediamo che ogni persona sia unica, ed è per questo che la nostra consulenza personalizzata è il punto di partenza di ogni percorso: studiamo insieme a te ciò di cui la tua pelle e il tuo corpo hanno davvero bisogno.</p>
+                <p>Che tu stia cercando una soluzione definitiva per l'epilazione con il laser, un ciclo di onda d'urto o un percorso di pressoterapia per rimodellare la silhouette, o la precisione dei tatuaggi permanenti per valorizzare il viso, ogni servizio è pensato per te.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>La Nostra Filosofia</h2>
+                <p>Ci piace studiare e non smettiamo mai di farlo: partecipiamo costantemente a corsi di aggiornamento e master specialistici per portarti solo le tecniche più moderne e i prodotti più sicuri. Scegliere Estetica Colfelice significa affidarsi a mani esperte che amano ciò che fanno e che hanno un unico obiettivo: regalarti un piccolo momento di relax e farti uscire con il sorriso, sicura della tua bellezza naturale.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Anni di Esperienza</div>
                 </div>
-                <div class="treatment-body">
-                    <p>La nostra pulizia del viso non è un semplice passaggio estetico, ma un protocollo di igiene profonda studiato per far respirare la tua pelle. Liberando i pori da smog e impurità, ossigeniamo i tessuti e restituiamo al volto la sua luce naturale. A differenza dei metodi standard, analizziamo preventivamente la tua tipologia cutanea per adattare il trattamento alla tua sensibilità, evitando arrossamenti e preparando l'epidermide a ricevere con massima efficacia i benefici dei prodotti successivi.</p>
+                <div class="stat-card">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Clienti Soddisfatti</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Trattamenti Disponibili</div>
                 </div>
             </div>
 
-            <div class="treatment-block">
-                <div class="treatment-header">
-                    <i class="fas fa-flask"></i>
-                    <h2>Trattamenti all'Acido (Peeling)</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Passione</h3>
+                    <p>Ogni trattamento è eseguito con dedizione e amore per il nostro lavoro.</p>
                 </div>
-                <div class="treatment-body">
-                    <p>Rinnovare la pelle e uniformare l'incarnato è possibile grazie ai nostri peeling mirati, basati sull'utilizzo di acidi sicuri e performanti come il mandelico o il glicolico. Questo trattamento accelera il turnover cellulare, schiarendo le macchie e riducendo le imperfezioni per un immediato effetto "pelle di seta". La nostra esperienza ci consente di selezionare il mix perfetto per le tue esigenze, garantendoti un rinnovamento cutaneo profondo senza mai stressare inutilmente i tessuti.</p>
+                <div class="value-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Sicurezza</h3>
+                    <p>Utilizziamo solo prodotti certificati e tecnologie all'avanguardia.</p>
                 </div>
-            </div>
-
-            <div class="treatment-block">
-                <div class="treatment-header">
-                    <i class="fas fa-eye"></i>
-                    <h2>Laminazione Ciglia</h2>
-                </div>
-                <div class="treatment-body">
-                    <p>Per valorizzare lo sguardo in modo naturale e duraturo, la laminazione è il trattamento curativo d'eccellenza che curva, tinge e nutre le tue ciglia con cheratina e vitamine. Otterrai uno sguardo aperto e intenso per settimane, senza dover ricorrere a ciglia finte o all'uso quotidiano del mascara. Utilizziamo solo prodotti certificati che proteggono le tue ciglia naturali, assicurandoti una curvatura armoniosa ed elegante studiata apposta per la forma del tuo occhio.</p>
+                <div class="value-card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Personalizzazione</h3>
+                    <p>Ogni percorso è studiato su misura per le tue esigenze specifiche.</p>
                 </div>
             </div>
 
@@ -139,8 +166,8 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2>Prenota il Tuo Trattamento</h2>
-            <p>Contattaci per una consulenza personalizzata gratuita</p>
+            <h2>Vieni a Trovarci</h2>
+            <p>Prenota una consulenza gratuita e scopri il percorso perfetto per te</p>
             <a href="./#form-section" class="btn-primary">Prenota Ora</a>
         </div>
     </section>
