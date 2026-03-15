@@ -671,55 +671,87 @@
             transform: translateX(5px);
         }
 
-        /* GALLERY */
+        /* GALLERY CAROUSEL */
         .gallery {
             background: linear-gradient(to bottom, #8AC6D0 0%, var(--white) 150px, var(--white) calc(100% - 150px), #8AC6D0 100%);
         }
 
-        .gallery-item {
-            transition: transform 0.5s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(138, 198, 208, 0.4);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .gallery-item {
-            aspect-ratio: 1;
-            overflow: hidden;
-            border-radius: 10px;
+        .carousel-wrapper {
             position: relative;
+            overflow: hidden;
+            border-radius: 15px;
         }
 
-        .gallery-item img {
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 25%;
+            padding: 0 8px;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 3/4;
             object-fit: cover;
+            border-radius: 10px;
             transition: transform 0.5s;
         }
 
-        .gallery-item:hover img {
+        .carousel-slide img:hover {
+            transform: scale(1.03);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            background: var(--white);
+            color: var(--accent);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent);
+            color: var(--white);
             transform: scale(1.1);
         }
 
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(38, 166, 154, 0.8));
-            opacity: 0;
-            transition: opacity 0.3s;
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
         }
 
-        .gallery-item:hover::after {
-            opacity: 1;
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-medium);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
         }
 
         /* FORM SECTION */
@@ -1213,9 +1245,8 @@
                 font-size: 11px;
             }
 
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+            .carousel-slide {
+                min-width: 50%;
             }
 
             .form-grid {
@@ -1362,9 +1393,8 @@
                 font-size: 24px;
             }
 
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
+            .carousel-slide {
+                min-width: 50%;
             }
 
             .form-wrapper {
@@ -1541,23 +1571,24 @@
                 <p>Un ambiente accogliente pensato per il tuo relax</p>
                 <div class="section-line"></div>
             </div>
-            <div class="gallery-grid">
-                <!-- CARICA 6home.jpg su GHL e inserisci URL qui -->
-                <div class="gallery-item">
-                    <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/6home.jpg" alt="Prodotti Centro Estetico">
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="galleryTrack">
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-1.jpg" alt="Centro Estetico Colfelice"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-2.jpg" alt="Trattamento Estetico"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-3.jpg" alt="Trattamento Professionale"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-4.jpg" alt="Estetica Avanzata"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-5.jpg" alt="Cura del Corpo"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-6.jpg" alt="Massaggio Professionale"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-7.jpg" alt="Nail Art"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-8.jpg" alt="Manicure Professionale"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-9.jpg" alt="Smalto e Decorazione"></div>
+                    <div class="carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-10.jpg" alt="Nail Design"></div>
                 </div>
-                <!-- CARICA 7home.jpg su GHL e inserisci URL qui -->
-                <div class="gallery-item">
-                    <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/7home.jpg" alt="Pedicure Professionale">
-                </div>
-                <!-- CARICA 8home.jpg su GHL e inserisci URL qui -->
-                <div class="gallery-item">
-                    <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/8home.jpg" alt="Sala Trattamenti">
-                </div>
-                <!-- CARICA 9home.jpg su GHL e inserisci URL qui -->
-                <div class="gallery-item">
-                    <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/9home.jpg" alt="Manicure Dettaglio">
-                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -1801,12 +1832,100 @@
             observer.observe(card);
         });
 
-        // Animate gallery items
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            item.classList.add('animate-on-scroll');
-            item.classList.add('animate-delay-' + ((index % 4) + 1));
-            observer.observe(item);
-        });
+        // GALLERY CAROUSEL
+        (function() {
+            const track = document.getElementById('galleryTrack');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('carouselDots');
+            let currentIndex = 0;
+            let slidesPerView = 4;
+            let autoplayInterval;
+
+            function getSlidesPerView() {
+                if (window.innerWidth <= 480) return 2;
+                if (window.innerWidth <= 768) return 2;
+                if (window.innerWidth <= 1024) return 3;
+                return 4;
+            }
+
+            function getTotalPages() {
+                return Math.ceil(slides.length / slidesPerView);
+            }
+
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                const totalPages = getTotalPages();
+                for (let i = 0; i < totalPages; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateCarousel() {
+                const slideWidth = 100 / slidesPerView;
+                const offset = currentIndex * slidesPerView * slideWidth;
+                track.style.transform = 'translateX(-' + offset + '%)';
+                document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                const totalPages = getTotalPages();
+                currentIndex = ((index % totalPages) + totalPages) % totalPages;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 4000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            prevBtn.addEventListener('click', () => { stopAutoplay(); prevSlide(); startAutoplay(); });
+            nextBtn.addEventListener('click', () => { stopAutoplay(); nextSlide(); startAutoplay(); });
+
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAutoplay(); }, {passive: true});
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) nextSlide();
+                if (touchEndX - touchStartX > 50) prevSlide();
+                startAutoplay();
+            }, {passive: true});
+
+            window.addEventListener('resize', () => {
+                slidesPerView = getSlidesPerView();
+                slides.forEach(s => s.style.minWidth = (100 / slidesPerView) + '%');
+                if (currentIndex >= getTotalPages()) currentIndex = getTotalPages() - 1;
+                createDots();
+                updateCarousel();
+            });
+
+            // Init
+            slidesPerView = getSlidesPerView();
+            slides.forEach(s => s.style.minWidth = (100 / slidesPerView) + '%');
+            createDots();
+            updateCarousel();
+            startAutoplay();
+        })();
     </script>
 
 </body>
