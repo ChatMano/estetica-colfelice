@@ -62,6 +62,9 @@
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; opacity: 0.7; }
         .footer-bottom a { color: var(--primary); }
 
+        .contact-float-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; box-shadow: 0 5px 25px rgba(37,211,102,0.4); z-index: 999; transition: all 0.3s; }
+        .contact-float-btn:hover { transform: scale(1.1); background: #128C7E; }
+
         @media (max-width: 768px) {
             nav { padding: 12px 20px; }
             .logo { font-size: 24px; }
@@ -85,6 +88,7 @@
                 <li><a href="./">Home</a></li>
                 <li><a href="./chi-siamo">Chi Siamo</a></li>
                 <li><a href="./#services">Trattamenti</a></li>
+                <li><a href="./prodotti">Prodotti</a></li>
                 <li><a href="./contatti">Contatti</a></li>
                 <li><a href="./#form-section" class="nav-cta">Prenota Ora</a></li>
             </ul>
@@ -135,6 +139,10 @@
             </div>
         </div>
     </footer>
+
+<a href="https://wa.me/393485505465?text=Ciao%20Marianna%2C%20ho%20trovato%20sul%20sito%20il%20tuo%20numero%2C%20volevo%20chiederti%20informazioni" target="_blank" class="contact-float-btn">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
