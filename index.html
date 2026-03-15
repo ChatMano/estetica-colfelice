@@ -621,54 +621,69 @@
             color: var(--white);
         }
 
-        .service-list {
-            list-style: none;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
-        .service-list li {
-            font-size: 14px;
-            color: var(--text);
-            padding: 6px 0;
-            border-bottom: 1px solid var(--primary-light);
-            transition: color 0.4s;
-        }
-
-        .service-list li:last-child {
-            border-bottom: none;
-        }
-
-        .service-box:hover .service-list li {
-            color: rgba(255,255,255,0.9);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        .service-cta {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .service-arrow {
+            font-size: 14px !important;
             color: var(--accent);
-            margin-top: auto;
-            padding-top: 10px;
-            transition: color 0.4s;
-        }
-
-        .service-cta i {
-            font-size: 12px !important;
-            margin-left: 5px;
             transition: transform 0.3s, color 0.4s;
         }
 
-        .service-box:hover .service-cta {
+        .service-box.open .service-arrow {
+            transform: rotate(180deg);
+        }
+
+        .service-box:hover .service-arrow {
             color: var(--white);
         }
 
-        .service-box:hover .service-cta i {
-            color: var(--white);
-            transform: translateX(5px);
+        .service-dropdown {
+            display: none;
+            width: 100%;
+            padding-top: 10px;
+            border-top: 1px solid var(--primary-light);
+        }
+
+        .service-box.open .service-dropdown {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: var(--text);
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .service-dropdown a:hover {
+            background: var(--primary-light);
+            color: var(--accent);
+            padding-left: 20px;
+        }
+
+        .service-box.open {
+            background: var(--white);
+            transform: none;
+            box-shadow: 0 10px 40px rgba(138, 198, 208, 0.25);
+        }
+
+        .service-box.open:hover {
+            background: var(--white);
+        }
+
+        .service-box.open i:first-child {
+            color: var(--accent);
+        }
+
+        .service-box.open h3 {
+            color: var(--text-dark);
+        }
+
+        .service-box.open .service-dropdown a:hover {
+            background: var(--primary-light);
+            color: var(--accent);
         }
 
         /* GALLERY CAROUSEL */
@@ -1236,13 +1251,9 @@
                 font-size: 14px;
             }
 
-            .service-list li {
-                font-size: 12px;
-                padding: 4px 0;
-            }
-
-            .service-cta {
-                font-size: 11px;
+            .service-dropdown a {
+                font-size: 13px;
+                padding: 8px 12px;
             }
 
             .carousel-slide {
@@ -1370,13 +1381,9 @@
                 font-size: 13px;
             }
 
-            .service-list li {
-                font-size: 11px;
-                padding: 3px 0;
-            }
-
-            .service-cta {
-                font-size: 10px;
+            .service-dropdown a {
+                font-size: 12px;
+                padding: 7px 10px;
             }
 
             .about-stats {
@@ -1416,7 +1423,7 @@
     <!-- HEADER -->
     <header>
         <div class="header-top">
-            <span>Prenota il tuo appuntamento: <a href="tel:+39XXXXXXXXXX">+39 XXX XXX XXXX</a></span>
+            <span>Prenota il tuo appuntamento: <a href="tel:+393485505465">+39 348 550 5465</a></span>
         </div>
         <nav>
             <a href="#" class="logo">Estetica Colfelice</a>
@@ -1496,69 +1503,66 @@
                 <div class="section-line"></div>
             </div>
             <div class="services-grid">
-                <a href="./mani-piedi" class="service-box">
+                <div class="service-box" onclick="toggleService(this, event)">
                     <i class="fas fa-hand-sparkles"></i>
                     <h3>Mani & Piedi</h3>
-                    <ul class="service-list">
-                        <li>Manicure e Pedicure</li>
-                        <li>Smalto Semipermanente</li>
-                        <li>Gel e Ricostruzione</li>
-                        <li>Nail Art</li>
-                    </ul>
-                    <span class="service-cta">Scopri di più <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="./estetica-avanzata" class="service-box">
+                    <i class="fas fa-chevron-down service-arrow"></i>
+                    <div class="service-dropdown">
+                        <a href="./mani-piedi#manicure-pedicure">Manicure e Pedicure</a>
+                        <a href="./mani-piedi#semipermanente">Smalto Semipermanente</a>
+                        <a href="./mani-piedi#gel-ricostruzione">Gel e Ricostruzione</a>
+                        <a href="./mani-piedi#nail-art">Nail Art</a>
+                    </div>
+                </div>
+                <div class="service-box" onclick="toggleService(this, event)">
                     <i class="fas fa-microchip"></i>
                     <h3>Estetica Avanzata</h3>
-                    <ul class="service-list">
-                        <li>LPG</li>
-                        <li>Radiofrequenza</li>
-                        <li>Onda d'Urto</li>
-                        <li>Pressoterapia</li>
-                        <li>Lipolaser</li>
-                        <li>Microneedling</li>
-                    </ul>
-                    <span class="service-cta">Scopri di più <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="./viso-sguardo" class="service-box">
+                    <i class="fas fa-chevron-down service-arrow"></i>
+                    <div class="service-dropdown">
+                        <a href="./estetica-avanzata#lpg">LPG</a>
+                        <a href="./estetica-avanzata#radiofrequenza">Radiofrequenza</a>
+                        <a href="./estetica-avanzata#onda-urto">Onda d'Urto</a>
+                        <a href="./estetica-avanzata#pressoterapia">Pressoterapia</a>
+                        <a href="./estetica-avanzata#lipolaser">Lipolaser</a>
+                        <a href="./estetica-avanzata#microneedling">Microneedling</a>
+                    </div>
+                </div>
+                <div class="service-box" onclick="toggleService(this, event)">
                     <i class="fas fa-spa"></i>
                     <h3>Cura del Viso & Sguardo</h3>
-                    <ul class="service-list">
-                        <li>Pulizia del Viso</li>
-                        <li>Peeling Acidi</li>
-                        <li>Laminazione Ciglia</li>
-                    </ul>
-                    <span class="service-cta">Scopri di più <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="./dermopigmentazione" class="service-box">
+                    <i class="fas fa-chevron-down service-arrow"></i>
+                    <div class="service-dropdown">
+                        <a href="./viso-sguardo#pulizia-viso">Pulizia del Viso</a>
+                        <a href="./viso-sguardo#peeling">Peeling Acidi</a>
+                        <a href="./viso-sguardo#laminazione-ciglia">Laminazione Ciglia</a>
+                    </div>
+                </div>
+                <div class="service-box" onclick="toggleService(this, event)">
                     <i class="fas fa-pen-fancy"></i>
                     <h3>Dermopigmentazione</h3>
-                    <ul class="service-list">
-                        <li>Microblading</li>
-                        <li>Trucco Permanente Labbra</li>
-                        <li>Trucco Permanente Sopracciglia</li>
-                        <li>Eyeliner Permanente</li>
-                    </ul>
-                    <span class="service-cta">Scopri di più <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="./epilazione" class="service-box">
+                    <i class="fas fa-chevron-down service-arrow"></i>
+                    <div class="service-dropdown">
+                        <a href="./dermopigmentazione#microblading">Microblading</a>
+                        <a href="./dermopigmentazione#trucco-permanente">Trucco Permanente</a>
+                    </div>
+                </div>
+                <div class="service-box" onclick="toggleService(this, event)">
                     <i class="fas fa-bolt"></i>
                     <h3>Epilazione</h3>
-                    <ul class="service-list">
-                        <li>Epilazione Laser</li>
-                        <li>Epilazione a Cera</li>
-                    </ul>
-                    <span class="service-cta">Scopri di più <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="./massaggi" class="service-box">
+                    <i class="fas fa-chevron-down service-arrow"></i>
+                    <div class="service-dropdown">
+                        <a href="./epilazione#epilazione-laser">Epilazione Laser</a>
+                        <a href="./epilazione#epilazione-cera">Epilazione a Cera</a>
+                    </div>
+                </div>
+                <div class="service-box" onclick="toggleService(this, event)">
                     <i class="fas fa-hands"></i>
                     <h3>Massaggi & Benessere</h3>
-                    <ul class="service-list">
-                        <li>Massaggi Viso</li>
-                        <li>Massaggi Corpo</li>
-                    </ul>
-                    <span class="service-cta">Scopri di più <i class="fas fa-arrow-right"></i></span>
-                </a>
+                    <i class="fas fa-chevron-down service-arrow"></i>
+                    <div class="service-dropdown">
+                        <a href="./massaggi#massaggi-viso-corpo">Massaggi Viso e Corpo</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1606,7 +1610,7 @@
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-phone"></i>
-                        <span>+39 XXX XXX XXXX</span>
+                        <span>+39 348 550 5465</span>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-envelope"></i>
@@ -1614,7 +1618,7 @@
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-clock"></i>
-                        <span>Lun - Sab: 9:00 - 19:00</span>
+                        <span>Lun - Sab: 10:00 - 20:00</span>
                     </div>
                 </div>
                 <div class="form-wrapper">
@@ -1735,7 +1739,7 @@
                     <ul>
                         <li><a href="#">Via Colfelice - Roma</a></li>
                         <li><a href="#">Zona Colli Albani</a></li>
-                        <li><a href="tel:+39XXXXXXXXXX">+39 XXX XXX XXXX</a></li>
+                        <li><a href="tel:+393485505465">+39 348 550 5465</a></li>
                         <li><a href="mailto:info@esteticacolfelice.it">info@esteticacolfelice.it</a></li>
                     </ul>
                 </div>
@@ -1831,6 +1835,18 @@
             card.classList.add('animate-delay-' + ((index % 4) + 1));
             observer.observe(card);
         });
+
+        // Service accordion toggle
+        function toggleService(box, event) {
+            // If clicking a dropdown link, let it navigate
+            if (event.target.closest('.service-dropdown a')) return;
+            event.preventDefault();
+            // Close other open boxes
+            document.querySelectorAll('.service-box.open').forEach(b => {
+                if (b !== box) b.classList.remove('open');
+            });
+            box.classList.toggle('open');
+        }
 
         // GALLERY CAROUSEL
         (function() {
