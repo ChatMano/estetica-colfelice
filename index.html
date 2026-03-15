@@ -169,6 +169,11 @@
             z-index: 1;
         }
 
+        .hero-bg picture {
+            width: 100%;
+            height: 100%;
+        }
+
         .hero-bg img {
             width: 100%;
             height: 100%;
@@ -1335,7 +1340,10 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-bg">
-            <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/hero-manicure.jpg" alt="Centro Estetico Colfelice">
+            <picture>
+                <source media="(max-width: 768px)" srcset="https://chatmano.github.io/estetica-colfelice/FotoMarianna/hero-manicure.jpg">
+                <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/hero-new.jpg" alt="Centro Estetico Colfelice">
+            </picture>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
