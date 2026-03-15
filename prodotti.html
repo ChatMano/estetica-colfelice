@@ -88,22 +88,52 @@
             position: relative;
         }
 
-        .brand-image img {
-            width: 100%;
+        .product-carousel {
+            overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
 
+        .product-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .product-carousel-slide {
+            min-width: 100%;
+        }
+
+        .product-carousel-slide img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .product-carousel-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-medium);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .product-carousel-dots .dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
         .brand-image::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            bottom: 15px;
-            left: 15px;
-            border: 3px solid var(--primary);
-            border-radius: 15px;
-            z-index: -1;
+            display: none;
         }
 
         /* WHY SECTION */
@@ -419,13 +449,25 @@
                     <h2>Methodist Skincare</h2>
                     <p>Nel nostro centro utilizziamo esclusivamente prodotti <strong>Methodist Skincare</strong>, un brand professionale formulato con ingredienti di altissima qualit&agrave; per garantire risultati visibili e duraturi sulla pelle.</p>
                     <p>Ogni prodotto viene selezionato con cura e utilizzato durante i nostri trattamenti per offrirti il massimo dell'efficacia. Se desideri continuare la cura a casa, gli stessi prodotti sono disponibili per l'acquisto direttamente nel nostro centro.</p>
-                    <a href="https://www.methodistskincare.com/" target="_blank" class="brand-badge">
-                        <i class="fas fa-external-link-alt"></i>
-                        Scopri Methodist Skincare
+                    <a href="https://wa.me/393485505465?text=Ciao%20Marianna%2C%20vorrei%20informazioni%20sui%20prodotti%20Methodist%20Skincare" target="_blank" class="brand-badge">
+                        <i class="fab fa-whatsapp"></i>
+                        Chiedi Info su WhatsApp
                     </a>
                 </div>
                 <div class="brand-image">
-                    <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/gallery-1.jpg" alt="Prodotti Methodist Skincare">
+                    <div class="product-carousel">
+                        <div class="product-carousel-track" id="productTrack">
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-1.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-2.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-3.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-4.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-5.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-6.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-7.jpg" alt="Prodotto Methodist Skincare"></div>
+                            <div class="product-carousel-slide"><img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/prodotti-8.jpg" alt="Prodotto Methodist Skincare"></div>
+                        </div>
+                    </div>
+                    <div class="product-carousel-dots" id="productDots"></div>
                 </div>
             </div>
         </div>
@@ -584,6 +626,45 @@
     <a href="https://wa.me/393485505465?text=Ciao%20Marianna%2C%20ho%20trovato%20sul%20sito%20il%20tuo%20numero%2C%20volevo%20chiederti%20informazioni" target="_blank" class="contact-float-btn">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+    (function() {
+        const track = document.getElementById('productTrack');
+        const slides = track.querySelectorAll('.product-carousel-slide');
+        const dotsContainer = document.getElementById('productDots');
+        let current = 0;
+        let autoplay;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => { clearInterval(autoplay); goTo(i); startAutoplay(); });
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            current = ((index % slides.length) + slides.length) % slides.length;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        function startAutoplay() { autoplay = setInterval(() => goTo(current + 1), 3500); }
+
+        // Swipe
+        let startX = 0;
+        track.addEventListener('touchstart', e => { startX = e.changedTouches[0].screenX; clearInterval(autoplay); }, {passive: true});
+        track.addEventListener('touchend', e => {
+            const diff = startX - e.changedTouches[0].screenX;
+            if (diff > 50) goTo(current + 1);
+            if (diff < -50) goTo(current - 1);
+            startAutoplay();
+        }, {passive: true});
+
+        startAutoplay();
+    })();
+    </script>
 
 </body>
 </html>
