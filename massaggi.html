@@ -15,6 +15,7 @@
             --text-dark: #4a4a4a;
             --white: #ffffff;
         }
+        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Lato', sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--text-dark); }
@@ -42,7 +43,7 @@
         .page-hero .breadcrumb a { color: var(--accent); }
 
         .treatments-section { padding: 80px 0; background: var(--white); }
-        .treatment-block { margin-bottom: 50px; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
+        .treatment-block { margin-bottom: 50px; background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; scroll-margin-top: 100px; }
         .treatment-block:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(138, 198, 208, 0.25); }
         .treatment-block:last-child { margin-bottom: 0; }
         .treatment-header { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); padding: 25px 35px; display: flex; align-items: center; gap: 15px; }
