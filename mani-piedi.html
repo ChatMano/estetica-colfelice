@@ -60,6 +60,8 @@
             color: var(--accent); letter-spacing: 2px;
         }
 
+        .logo-img { height: 50px; width: auto; }
+
         .nav-links { display: flex; list-style: none; gap: 35px; }
 
         .nav-links a {
@@ -207,6 +209,7 @@
         @media (max-width: 768px) {
             nav { padding: 12px 20px; }
             .logo { font-size: 24px; }
+            .logo-img { height: 35px; }
             .nav-links {
                 display: none; position: absolute; top: 100%; left: 0; right: 0;
                 background: var(--white); flex-direction: column;
@@ -227,7 +230,7 @@
 
     <header>
         <nav>
-            <a href="./" class="logo">Estetica Colfelice</a>
+            <a href="./" class="logo"><img src="logo.svg" alt="Estetica Colfelice" class="logo-img"></a>
             <ul class="nav-links">
                 <li><a href="./">Home</a></li>
                 <li><a href="./chi-siamo.html">Chi Siamo</a></li>
