@@ -46,6 +46,10 @@
         .about-block h2 { font-size: 30px; margin-bottom: 20px; color: var(--accent); }
         .about-block p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 15px; }
 
+        .photos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 40px 0; }
+        .photos-grid img { width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s; aspect-ratio: 3/4; object-fit: cover; }
+        .photos-grid img:hover { transform: scale(1.02); }
+
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
         .stat-card { text-align: center; padding: 40px 20px; background: var(--primary-light); border-radius: 15px; transition: transform 0.3s; }
         .stat-card:hover { transform: translateY(-5px); }
@@ -83,6 +87,7 @@
             .page-hero h1 { font-size: 32px; }
             .stats-grid { grid-template-columns: 1fr; gap: 20px; }
             .values-grid { grid-template-columns: 1fr; gap: 20px; }
+            .photos-grid { grid-template-columns: 1fr; gap: 15px; }
         }
     </style>
 </head>
@@ -119,6 +124,11 @@
             <div class="about-block">
                 <h2>L'essenza di Estetica Colfelice</h2>
                 <p>Benvenuti nel nostro spazio. Il centro nasce da un'idea semplice: unire l'efficacia delle tecnologie più innovative al calore di un momento dedicato interamente a te. Sappiamo che la cura del corpo non è solo estetica, ma un modo per stare bene con se stesse: per questo lavoriamo ogni giorno con passione, gioia e un'attenzione assoluta alla pulizia e alla sicurezza.</p>
+            </div>
+
+            <div class="photos-grid">
+                <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/marianna-1.jpg" alt="Marianna - Estetica Colfelice">
+                <img src="https://chatmano.github.io/estetica-colfelice/FotoMarianna/marianna-2.jpg" alt="Marianna - Estetica Colfelice">
             </div>
 
             <div class="about-block">
