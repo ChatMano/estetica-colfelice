@@ -31,6 +31,8 @@
         header { position: fixed; top: 0; left: 0; right: 0; background: var(--white); z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; }
         .logo { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--accent); letter-spacing: 2px; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { height: 45px; width: 45px; }
         .logo-img { height: 50px; width: auto; }
         .nav-links { display: flex; list-style: none; gap: 35px; }
         .nav-links a { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--text); transition: color 0.3s; position: relative; }
@@ -80,7 +82,8 @@
         @media (max-width: 768px) {
             nav { padding: 12px 20px; }
             .logo { font-size: 24px; }
-            .logo-img { height: 35px; }
+            .logo-icon { height: 35px; width: 35px; }
+            .logo-img { height: 38px; }
             .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 30px; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
             .nav-links.active { display: flex; }
             .menu-toggle { display: flex; }
@@ -95,7 +98,7 @@
 
     <header>
         <nav>
-            <a href="./" class="logo"><img src="logo.svg" alt="Estetica Colfelice" class="logo-img"></a>
+            <a href="./" class="logo"><img src="favicon.svg" alt="Estetica Colfelice" class="logo-icon"><img src="logo.svg" alt="Estetica Colfelice" class="logo-img"></a>
             <ul class="nav-links">
                 <li><a href="./">Home</a></li>
                 <li><a href="./chi-siamo.html">Chi Siamo</a></li>
