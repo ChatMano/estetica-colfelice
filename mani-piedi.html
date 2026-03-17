@@ -62,7 +62,7 @@
 
         .logo { display: flex; align-items: center; gap: 10px; }
         .logo-icon { height: 45px; width: 45px; }
-        .logo-img { height: 50px; width: auto; }
+        .logo-img { height: 65px; width: auto; }
 
         .nav-links { display: flex; list-style: none; gap: 35px; }
 
@@ -210,9 +210,9 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             nav { padding: 12px 20px; }
-            .logo { font-size: 24px; }
+            .logo { font-size: 24px; flex: 1; justify-content: center; }
             .logo-icon { height: 35px; width: 35px; }
-            .logo-img { height: 38px; }
+            .logo-img { height: 52px; }
             .nav-links {
                 display: none; position: absolute; top: 100%; left: 0; right: 0;
                 background: var(--white); flex-direction: column;
